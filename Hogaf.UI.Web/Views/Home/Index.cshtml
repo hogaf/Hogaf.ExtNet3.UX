@@ -1,0 +1,99 @@
+﻿@using Ext.Net;
+@using Ext.Net.MVC;
+@using Hogaf.ExtNet.UX
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ext.NET MVC Sample</title>
+</head>
+<body>
+    @(Html.X().ResourceManager())
+
+    <div class="wrapper">
+        <h1>Welcome to Ext.NET!</h1>
+        <p>Thank you for installing Ext.NET MVC.</p>
+        <p class="last">You can check that everything is working correctly by submitting a value in the message box below.</p>
+    </div>
+
+    @(Html.X().Viewport()
+              .Layout(LayoutType.Border)
+              .RTL(true)
+              .Items(
+                Html.X().FormPanel()
+                        .Title("Welcome to Ext.NET")
+                        .Region(Region.West)
+                        .Width(350)
+                        .Frame(true)
+                        .Collapsible(true)
+                        .Cls("box")
+                        .BodyPadding(5)
+                        .DefaultButton("Button1")
+                        .Layout(LayoutType.Anchor)
+                        .DefaultAnchor("100%")
+                        .Items(Html.X().PDatePicker(),
+                               Html.X().PDateField().Padding(5)
+                        )
+                        .Buttons(Html.X().Button()
+                            .ID("Button1")
+                            .Text("Submit")
+                            .Icon(Icon.Accept)
+                            .DirectClickAction("SampleAction")
+                        ),
+                 Html.X().GridPanel()
+                         .Border(false)
+                         .RTL(true)
+                         .Region(Region.Center)
+                         .Store(
+                             Html.X().Store()
+                                 .DataSource(Model)
+                                 .PageSize(30)
+                                 .Model(
+                                     Html.X().Model()
+                                         .IDProperty("Id")
+                                         .Fields(
+                                             Html.X().ModelField().Name("Id").Type(ModelFieldType.Int),
+                                             Html.X().ModelField().Name("Company").Type(ModelFieldType.String),
+                                             Html.X().ModelField().Name("Price").Type(ModelFieldType.Float),
+                                             Html.X().ModelField().Name("Date").Type(ModelFieldType.Date).DateFormat("yyyy-MM-ddTHH:mm:ss"),
+                                             Html.X().ModelField().Name("Size").Type(ModelFieldType.String),
+                                             Html.X().ModelField().Name("Visible").Type(ModelFieldType.Boolean)
+                                         )
+                                 )
+                                 .Sorters(
+                                     Html.X().DataSorter().Property("Company").Direction(Ext.Net.SortDirection.ASC)
+                                 )
+                         )
+                         .ColumnModel(
+                             Html.X().Column().Text("ID").DataIndex("Id"),
+                             Html.X().Column().Text("Company").DataIndex("Company").Flex(1),
+                             Html.X().Column().Text("Price").DataIndex("Price").Renderer(RendererFormat.UsMoney),
+                             Html.X().PDateColumn().Text("Date").DataIndex("Date").Align(Alignment.Center),
+                             Html.X().Column().Text("Size").DataIndex("Size"),
+                             Html.X().BooleanColumn().Text("Visible").DataIndex("Visible").Align(Alignment.Center).TrueText("Yes").FalseText("No")
+                         )
+                         .BottomBar(
+                             Html.X().PagingToolbar()
+                                 .HideRefresh(true)
+                                 .Items(
+                                     Html.X().Button()
+                                         .Text("Find '3m Co'")
+                                         .Handler("var f = this.up('grid').filters.getFilter('Company'); f.setValue('3m Co'); f.setActive(true);"),
+                                     Html.X().Button()
+                                         .Text("All Filters")
+                                         .ToolTip("Get Filters of Grid")
+                                         .Handler("var filters = Ext.encode(this.up('grid').filters.getFilterData()); Ext.Msg.alert('Filters', filters);"),
+                                     Html.X().Button()
+                                         .Text("Clear Filters")
+                                         .Handler("this.up('grid').filters.clearFilters();")
+                                 )
+                         )
+           )
+    )
+</body>
+</html>

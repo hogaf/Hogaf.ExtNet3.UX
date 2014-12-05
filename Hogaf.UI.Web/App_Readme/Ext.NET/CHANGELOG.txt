@@ -1,0 +1,214 @@
+﻿**************************************************************************
+*                   Version 3.0.0-beta CHANGELOG                         *
+**************************************************************************
+
+Release Date     : 2014-11-05
+Current Version  : 3.0.0-beta
+
+FIX	
+	[r5751]	A DirectMethod's URL was not resolved. The bug report: http://forums.ext.net/showthread.php?30911
+	[r5786]	Script tags encoding should preserve original case. The fix is ported from v2 (revision #5758).
+	[r5790]	MVC Chart Dashboard example: the bad alignment of the labels inside the Column chart. The bug report: http://forums.ext.net/showthread.php?31711. Ported v2 revision #5761.
+	[r5794]	Desktop Examples: used UIName property instead of UI. Ported the v2 revision #5793.
+	[r5804]	[#467] Ported the fix from v2.
+	[r5807]	[#473] It needs to destroy a Column's patternTpl on Column's destroy.
+	[r5816]	[#477] HtmlEditor issues in IE11. Copied v2 revisions.
+	[r5818]	[#478] AbstractComponent's destroyTooltips causes a JavaScript error if a component is not rendered. Copied the fix for the from the revision 5817.
+	[r5820]	[#477] HtmlEditor's insertAtCursor didn't work in IE11. Copied the fix for v2.
+	[r5824]	[#479] MultiUpload should not encode form elements values. Copied the fix for v2.
+	[r5826]	[#482] Store's onProxyLoad should be overridden instead of AbstractStore's one
+	[r5834]	[#486] DateField MMM format issue.
+	[r5836]	[#488] InputMask with no Mask throws a JavaScript error
+	[r5838]	[#489] ImageCommandColumn provides a wrong record in a Command event handler if there is a collapsed group.
+	[r5840]	[#486] DateField MMMM format issue
+	[r5843]	[#490] StoreBase's FindExact: wrong template.
+	[r5845]	[#487] FormPanel's WaitMsgTarget should render "true" as a boolean true, not as a string.
+	[r5847]	[#491] ResourceManager's RegisterIcon and RegisterClientStyleBlock doesn't work during a DirectEvent.
+	[r5858]	[#497] InfoPanel missed a Modal setting
+	[r5860]	[#498] ProxyNode's ChildNodes method has to put a semicolon at the end of a produced script
+	[r5864]	[#504] GridPanel/FilterHeader/Custom_Field example: wrong behavior of the Size filter.
+	[r5865]	TabPanel.cs: corrected a mistype in the Exception's message.
+	[r5868]	[#506] TabPanel's ActiveTabIndex should not check Items Count in MVC.
+	[r5870]	[#509] ResourceManager's CheckID throws an Exception, but it should not.
+	[r5873]	MVC Window Partial example. Used the full class name Ext.Net.MVC.PartialViewResult instead of PartialViewResult. Otherwise, it might confuse that System.Web.MVC.PartialViewResult is being used.
+	[r5876]	[#511] AbstractComponent's destroyFromDom throws an error if a dom has no children.
+	[r5878]	[#512] ServerMapping: string indexers don't work. Also, now ServerMapping supports multiple indexers (of int and string types only). E.g. ServerMapping = "Properties[1, \"Value\"]"
+	[r5880]	[#512] ServerMapping: the new code broke some scenario that is previously worked.
+	[r5882]	[#513] TreeStore.DataSource: a possibility to provide a Root from the data without creating a proxy Root. Set IsRoot="true" for a NodeBinding.
+	[r5884]	[#514] GridPanel printing doesn't work with s FilterHeader plugin.
+	[r5887]	[#515] ComboBox must remove its store's load listeners on destroy or unbind.
+	[r5889]	[#517] MultiUpload breaks if there are some characters in a file name.
+	[r5893]	[#519] GridFilters doesn't show a filtered icon on inner columns of a group column.
+	[r5895]	Associations/HasMany/Simple example: a JavaScript error occurs if expand a row.
+	[r5897]	Examples Explorers: some examples didn't show outer files in the Source Window and didn't put them into a zip.
+	[r5900]	[#520] Image.js: typo in the getCurrentScroll function.
+	[r5902]	[#521] DateField + Chinese: problem with MMM and MMMM formats.
+	[r5904]	ComponentColumn Pin Editor example: the PinEvents and UnpinEvents should not be used in that example.
+	[r5906]	[#523] TextField: If both LeftButtons and RightButtons, LeftButtonsShowMode and RightButtonsShowMode, then only RightButtons are shown.
+	[r5911]	[#515] ComboBox must remove its store's load listeners on destroy or unbind. Corrected the initial fix.
+	[r5913]	[#525] ComponentLoader breaks with Mode="Component" if a response contains a component with a Namespace property (x.res ns).
+	[r5915]	[#526] ComponentLoader breaks if it loads non-embedded ResourceItems.
+	[r5917]	[#528] ComboBox/MultiCombo: selecting new items should clear previous selection.
+	[r5921]	[#529] MultiSelect's setValue should prevent re-focusing of last focused row.
+	[r5923]	[#530] DirectEvent EventMask UseMsg="false" doesn't work.
+	[r5925]	[#531] A disabled Button shows a pointer cursor on its edges.
+	[r5947]	[#536] TagField throws a JavaScript error in IE11.
+	[r5955]	[#539] MultiUpload: WebResource.axd cannot load swfupload.swf file.
+	[r5970]	FilterHeader: "numeric" has been renamed to "number".
+	[r5977]	[#550] ImageCommandColumn's GroupCommands might discard a developer's GroupHeaderTpl.
+	[r5991]	[#554] Ext.form.field.Picker's collapseIf: a picker might collapse in a scenario when it should not.
+	[r6002]	Store's prepareRecord function works incorrectly with mapping
+	[r6003]	Column layout raises js error
+	[r6004]	PagingStore doesn't work with Grouping feature
+	[r6014]	Various bugs fixing
+	[r6015]	Various bugs fixing
+	[r6016]	Various bugs fixing
+	[r6017]	Various bugs fixing
+	[r6018]	Various bugs fixing
+	[r6019]	Various bugs fixing
+	[r6020]	UpdateContent doesn't support UserControlLoader
+	[r6028]	[UPDATE] Various fixes and updates.
+	[r6030]	Feed_Viewer example fix
+	[r6031]	Store exception event is not fired for sync action
+	[r6037]	[UPDATE] Various fixes and updates in the examples (mostly, MVC) and the framework.
+	[r6041]	Various bugs fixing
+	[r6043]	[#571] FilterHeader's .setValues() call doesn't convert the value to the filter's type at first call
+	[r6048]	[#573] GridPanel printing calls a column's renderer with a wrong scope.
+	[r6067]	[#492] DirectEvent's and DirectMethod's Scope option works now.
+	[r6069]	[#578] ResourceManager's ThemePath doesn't support .js files.
+	[r6071]	[#579] Desktop TaskBar context menu should hide respective items according to a Window's Maximizable, Minimizable or Closable settings.
+	[r6074]	[#581] The Netherlands (Dutch) locale didn't set a format for DateColumns.
+	[r6083]	[UPDATE] Corrected some WebForms Draw examples.
+	[r6113]	[#587] DirectEvent with IsUpload="true" might break if there is encoded HTML in a response.
+
+NEW	
+	[r5747]	Branch for Ext.NET 3.0 development
+	[r5787]	Added X.Defer() Method. Pass in a client-side function name, a handler, or a JFunction, plus the timeout in Milliseconds. Ported from v2, revision #5759.
+	[r5802]	[#473] Column's Pattern property.
+	[r5822]	[#474] New /Form/HtmlEditor/Basic sample. Copied from v2.
+	[r5856]	[#459] New Hyperlink Column for GridPanel
+	[r5885]	ExtJS 5.0.0 zip
+	[r5891]	[#518] MVC Examples: added "Linked ComboBoxes in a GridPanel" example.
+	[r5929]	ExtJS 5.0.1 archive
+	[r6025]	Global events support
+	[r6026]	SegmentedButton support
+	[r6034]	Action property to AbstractComponent for reference to an action
+	[r6106]	[#463] Added IndicatorTipConfig for Field and FieldContainer.
+
+UPDATE	
+	[r5754]	Updated all NuGet packages
+	[r5755]	Updated Json.NET reference in project file
+	[r5778]	Cleanup and formatting of examples.
+	[r5779]	Examples Explorer formatting and code clean up.
+	[r5780]	Examples Explorer formatting and code clean up.
+	[r5782]	Examples Explorer formatting and code clean up.
+	[r5783]	Examples Explorer formatting and code clean up.
+	[r5785]	Updated BREAKING_CHANGES.txt
+	[r5788]	MessageBus is converted
+	[r5792]	Buttons client side classes are updated
+	[r5798]	[#467] Copied the fix from v2.
+	[r5799]	Containers are updated
+	[r5801]	Revised /Build/Meta/ templates
+	[r5806]	[#471] Copied from v2: GridPanel/Selection_Models/Checkbox_Selection examples: added more overrides to get selection all records across all pages working more consistently.
+	[r5811]	Added a missed breaking change regarding UI and UIName properties. http://forums.ext.net/showthread.php?32851
+	[r5814]	Ported v2 revision #5813.
+	[r5829]	[#483] Removed the Button's Type property and the ButtonType enum. A Button is not rendered as a button HTML element anymore.
+	[r5831]	[#484] CheckboxGroupFor now works with any IEnumerable for values.
+	[r5854]	DirectMethods Overview example: small revisions requested by Anup (http://forums.ext.net/showthread.php?35651)
+	[r5855]	[#494] Ext.util.Format.euroMoney: a new Ext.util.Format.euroPrefix setting. Set it to true if you need a euro sign to be prefixed instead of suffixed.
+	[r5907]	Examples Explorer: a "validator" tag for a few examples.
+	[r5927]	Removed the BLANK_IMAGE_URL property. It existed to support IE6/IE7. That support has been dropped.
+	[r5928]	Added Element's Window property. Ext.getWin() is underlying.
+	[r5930]	ResourceManager: removed one more appearance of BLANK_IMAGE_URL.
+	[r5931]	Various updates of server side API according the changes between ExtJS 4 and 5.
+	[r5932]	TriggerField is removed, all functionality is moved to TextField
+	[r5933]	ExtJS 5.0.1 update
+	[r5934]	Form scripts update
+	[r5935]	Form scripts update
+	[r5936]	Various server API updates in the Ext\Data package.
+	[r5937]	Server API updates according to the ExtJS changes in the Ext.dom package.
+	[r5939]	Various updates in the server side API according to the changes between ExtJS 4 and 5.
+	[r5941]	Data scripts update
+	[r5942]	Grid scripts update (partial)
+	[r5943]	Grid scripts update (partial)
+	[r5945]	Updated Model Validation according the changes in ExtJS 5.
+	[r5948]	Various updates of server API according to the changes in ExtJS 5.
+	[r5949]	Updated BREAKING_CHANGES.txt
+	[r5951]	[#537] ComboBox: missed CaseSensitive server config option.
+	[r5956]	Grid's scripts update
+	[r5957]	Tree scripts update
+	[r5959]	Update of various ux.
+	[r5961]	Updates docs for ResourcePlaceHolder.
+	[r5962]	Updated TabCloseMenu ux.
+	[r5963]	Some updates in/for Examples Explorers to get it runnable.
+	[r5964]	ModelField: added the Critical property.
+	[r5965]	Column subwidgets aligning update
+	[r5967]	History.js update
+	[r5969]	Updated some ux scripts
+	[r5971]	Updated GroupTabPanel's JavaScript sources.
+	[r5972]	Drag&Drop scripts update
+	[r5973]	Updated the InputMask plugin
+	[r5974]	Examples Explorers: uncommented the History components since it has been updated.
+	[r5975]	Updated the LiveSearchGridPanel plugin.
+	[r5979]	Tree filtering logic update
+	[r5980]	Message widgets update (Badge, Callout, InfoPanel, Notification)
+	[r5983]	Updated the MouseDistanceSensor plugin
+	[r5984]	Updated the MultiSelect component
+	[r5985]	Updated TabFx and TabStrip.
+	[r5988]	All base scripts(src folder) are updated
+	[r5989]	Various UX updates.
+	[r5992]	Updated the ComponentView plugin
+	[r5993]	Updated MultiUpload.
+	[r5994]	[#552] Updated TabScrollerMenu
+	[r5995]	TagLabel/TagField update
+	[r5996]	TagField key navigation update
+	[r5997]	Updated CalendarPanel
+	[r5998]	Desktop update
+	[r6001]	Minor corrections in the GridPanel/ArrayGrid/ArrayWithPaging examples.
+	[r6005]	Updated Portal
+	[r6006]	ComponentLoader: removed the LoadOnRender property as not useful. We have the AutoLoad and TriggerEvent properties.
+	[r6007]	Updated ModelIdGenerators. Added a new NegativeIdGenerator.
+	[r6008]	Removed the AbstractComponent's ApplyTo property. It is an atavism from Ext.NET v1.
+	[r6010]	Examples Explorers: updated theming
+	[r6011]	Remove old UI pack resources
+	[r6012]	UI pack is updated for all themes
+	[r6013]	WebForms Examples Explorers: updated, fixed, corrected a bunch of examples.
+	[r6024]	Component API update
+	[r6029]	Tree filter logic update
+	[r6032]	Examples update
+	[r6033]	Revised SegmentedButton and Action samples
+	[r6035]	Action example update
+	[r6036]	Rename ActionRef.Reference to ActionRef.Action
+	[r6039]	SimpleTasks example update
+	[r6045]	Examples Explorers: removed the old Build folders since they are not used anywhere.
+	[r6050]	MVC5 update, now it is default MVC framework
+	[r6052]	[#575] TagField: add the new CreateNewOnSpace and EncodeOnCreate options.
+	[r6053]	Added Transmit Icon for Action nav item
+	[r6054]	Added <ext:Hyperlink> to list of Button options in Overview
+	[r6057]	Examples Explorer revisions for Beta 3.0 release
+	[r6058]	Updated projects to latest Ext.NET.Utilities version 2.5.0
+	[r6059]	Json.NET updated to 6.0.5
+	[r6062]	Updated the MVC Portal Complex example.
+	[r6063]	[#466] Renamed HyperLink to Hyperlink, LinkButton to HyperlinkButton.
+	[r6065]	TagField: added a pair of new methods to improve API.
+	[r6066]	[#508] By default, there is no "parentAutoLoadControl" reference anymore. We must not have any globals. Please use the Loader's ParentRef property if needed.
+	[r6076]	Draw update (many restrictions still)
+	[r6077]	Updated Charts Axis.
+	[r6078]	updated logo to new branding, new header and home
+	[r6079]	Updated Charts Series.
+	[r6081]	Chart update
+	[r6084]	WebForms Examples Explorer: toggle visibility of the navigation menu on click and hide on mouse leave.
+	[r6085]	MVC Examples Explorer: the Crisp theme by default.
+	[r6086]	Port new header to MVC Examples Explorer and minor visual changes on dropdown menu
+	[r6087]	Revised Menu links in Examples Explorer
+	[r6088]	Revised menu links in MVC Examples Explorer and fix an issue with clicking links in dropdown
+	[r6089]	Various updates in Charts.
+	[r6090]	Chart examples update
+	[r6091]	Various updates regarding Charts.
+	[r6096]	Chart examples update
+	[r6105]	Updated MVC Chart examples and other various updates regarding Charts.
+	[r6107]	Updated BREAKING_CHANGES.txt
+	[r6108]	Updated Charts in the "non-charting" examples.
+	[r6109]	VerticalMarker plugin update
+	[r6117]	Newtonsoft.Json.6.0.6
+	[r6118]	Revised copyright and timestamp to Ext.NET 3.0.0-beta release
